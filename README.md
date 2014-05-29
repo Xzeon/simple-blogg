@@ -2,7 +2,7 @@
 
 A very simple blogg, all you need to do is connect it to a database, all the tables will be created automatically. Then you just register your admin account and your good to go.
 
-__This project was an assigment in a PHP Course during my University Studies, the language in the project is therefore in Swedish. __
+__This project was an assigment in a PHP Course during my University Studies, the language in the project is therefore in Swedish.__
 
 
 ## Architecture
