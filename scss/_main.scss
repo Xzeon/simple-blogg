@@ -1,0 +1,220 @@
+%font-family {
+  font-family: "Helvetica Nue", Helvetica, Arial, sans-serif;
+}
+
+
+body {
+  @extend %font-family;
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: center;
+  color: $base-font-color;
+}
+
+p, li {
+  color: $base-font-color;
+}
+
+header {
+  p:not(.date) {
+    @extend h4;
+    color: $sub-header-color;
+    font-weight: 300;
+  }
+}
+
+.blogg-title {
+  font-size: 3.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: .5em;
+  a {
+    color: $base-font-color;
+  }
+}
+
+article {
+
+  header a:hover {
+    color: lighten($base-font-color, 20%);
+  }
+
+  h3, h4, h5 {
+    text-align: left;
+  }
+
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  padding: 1em 1em 3em 1em;
+  margin-bottom: 3em;
+
+  header a {
+    color: $base-font-color;
+  }
+
+  button {
+    position: absolute;
+    padding: 0;
+    min-width: 25px;
+    min-height: 25px;
+
+    &.remove {
+      background-color: #ed5751;
+      top: 0;
+      right: 0;
+    }
+    &.edit {
+      background-color: #a2d238;
+      top: 0;
+      right: 40px;
+    }
+  }
+
+
+  .date {
+    text-align: center;
+  }
+}
+
+.login {
+  position: absolute;
+  top: -80px;
+  right: -100px;
+}
+
+.admin-topbar {
+  background-color: #000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  > div {
+    max-width: 64.063em;
+    margin: auto;
+  }
+
+  nav {
+    padding: .75em 0 0 2em;
+    float: left;
+  }
+
+  a {
+    padding: .2em 1em;
+    font-weight: 300;
+    color: #aaa;
+    border: 1px solid #000;
+    transition: all .2s;
+
+    &:hover, &.active {
+      color: white;
+    }
+  }
+
+  h3{
+    @extend h5;
+    color: #eee;
+    margin: 0;
+    padding: .5em 2em .5em 0;
+    margin-left: 1em;
+  }
+}
+
+.logout {
+  float: right;
+  margin: .4em 1em 0 0;
+}
+
+.container {
+  padding-top: 5em;
+}
+
+form {
+  textarea {
+    min-height: 200px;
+  }
+
+  h3 {
+    text-align: left;
+  }
+}
+
+.comments {
+
+  > div {
+    position: relative;
+    margin-bottom: 2em;
+    border: 1px solid #ddd;
+    padding: .5em 1em;
+    background-color: #eee;
+  }
+
+  .author {
+    margin-top: .3em;
+  }
+
+  span {
+    font-weight: 300;
+  }
+
+
+  button {
+    background-color: #ed5751;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+
+.comment_date {
+  position: absolute;
+  top: .9em;
+  right: 50px;
+}
+
+.fyranollfyra {
+  a {
+    text-align: center;
+    display: block;
+  }
+}
+
+// Override foundation //
+
+.alert-box {
+  text-align: center;
+
+  &.alert {
+    background-color: #ff574d;
+    border: 1px solid darken(#ff574d, 15%)
+  }
+}
+
+
+// Media queries //
+
+@media screen and (max-width: 600px){
+  .admin-topbar {
+    nav {
+      clear: both;
+      float: none;
+      text-align: center;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+    .logout {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  article {
+    button.remove, button.edit {
+      top: -15px;
+    }
+  }
+}
