@@ -29,7 +29,7 @@ IoC::register('FrontController', function(){
 
 IoC::register('RegisterController', function(){
 	$db = new Database();
-	$rc = new RegisterController(new DatabaseGateway($db), new View, new inputHandler, new inputValidation, new Authentication);
+	$rc = new RegisterController(new DatabaseGateway($db), new View, new InputHandler, new InputValidation, new Authentication);
 	return $rc;
 });
 
@@ -68,7 +68,7 @@ IoC::register('SinglePostController', function(){
 
 IoC::register('ConfigController', function(){
 	$db = new Database();
-	$cc = new ConfigController(new DatabaseGateway($db), new View, new inputHandler, new inputValidation, new inputFiltering);
+	$cc = new ConfigController(new DatabaseGateway($db), new View, new InputHandler, new InputValidation, new InputFiltering);
 	return $cc;
 });
 
